@@ -5,34 +5,33 @@ import ItemDate from './components/ItemDate'
 function App() {
   const data = [
     {
+      id: 'p1',
       name: "Camera",
-      date: 18,
-      month: "August",
-      year: 2003
+      amount: 20000,
+      date: new Date(2026, 1, 11)
     },
     {
+      id: 'p2',
       name: "Controller",
-      date: 20,
-      month: "June",
-      year: 2013
+      amount: 35000,
+      date: new Date(2026, 2, 20)
     },
     {
+      id: 'p3',
       name: "Monitor",
-      date: 15,
-      month: "Dec",
-      year: 2023
+      amount: 10000,
+      date: new Date(2026, 5, 10)
+    },
+    {
+      id: 'p4',
+      name: "Keyboard",
+      amount: 5000,
+      date: new Date(2026, 6, 15)
     }
   ]
   return (
     <div>
-      <Item name={data[0].name}/>
-      <ItemDate date={data[0].date} month={data[0].month} year={data[0].year}></ItemDate>
-
-      <Item name={data[1].name}/>
-      <ItemDate date={data[1].date} month={data[1].month} year={data[1].year}></ItemDate>
-
-      <Item name={data[2].name}/>
-      <ItemDate date={data[2].date} month={data[2].month} year={data[2].year}></ItemDate>
+      <Item items ={data}/>
     </div>
   )
 }

@@ -1,7 +1,19 @@
-.mfgDate{
+/* .mfgDate{
     text-align: center;
     background-color: pink;
     color: #333;
     padding: 1rem;
     font-size: 1rem;
+} */
+
+.mfgDate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem 1.2rem;
+    background-color: #333;
+    color: #fff;
+    max-width: 50px;
 }
