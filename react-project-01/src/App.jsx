@@ -1,6 +1,7 @@
 import './App.css'
 import Item from './components/Item'
 import ItemDate from './components/ItemDate'
+import NewProduct from './components/NewProduct'
 
 function App() {
   const data = [
@@ -29,9 +30,15 @@ function App() {
       date: new Date(2026, 6, 15)
     }
   ]
+
+  function appHandler(product){
+    console.log("I am inside App.jsx");
+    console.log(product);
+  }
   return (
     <div>
-      <Item items ={data}/>
+      <NewProduct/>
+      <Item items ={data} onAppHandler = {appHandler}/>
     </div>
   )
 }

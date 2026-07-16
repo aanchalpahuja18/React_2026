@@ -8,10 +8,16 @@ const Item = (props) => {
         console.log("Button clicked");
         
     }
+
+    function itemHandler(product){
+        console.log("I am inside Item.jsx");
+        console.log(product);
+        props.onAppHandler(product);
+    }
   return (
     <div className='item-container'>
       <div className="item">
-        <ItemDate date={props.items[0].date}/>
+        <ItemDate date={props.items[0].date} onItemHandler={itemHandler}/>
         <h2>{props.items[0].name}</h2>
         <button onClick={clickHandler}>Add to Cart</button>
       </div>

@@ -1,0 +1,24 @@
+.new-product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.new-product_title{
+    margin-bottom: 0.8rem;
+}
+
+.new-product_date{
+    margin-bottom: 0.8rem;
+}
+.new-product_btn{
+    background-color: lightblue;
+    padding: 0.4rem;
+    border-radius: 10px;
+    font-weight: 550;
+}
