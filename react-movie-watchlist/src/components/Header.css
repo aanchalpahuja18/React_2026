@@ -1,0 +1,8 @@
+.header{
+    margin: 2rem;
+    color: yellow;
+    border: 5px dashed lightblue;
+    max-width: fit-content;
+    padding: 1.2rem;
+    border-radius: 10px;
+}

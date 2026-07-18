@@ -1,0 +1,37 @@
+.card{
+    padding: 2rem;
+    margin: 2rem;
+    background-color: lightpink;
+    max-width: fit-content;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title{
+    font-size: 1.2rem;
+}
+
+.rating{
+    font-size: 0.9rem;
+}
+
+.status{
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+.buttons{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.delete, .watch{
+    padding: 0.4rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: yellow;
+}

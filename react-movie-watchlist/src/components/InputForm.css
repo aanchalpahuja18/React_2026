@@ -1,0 +1,24 @@
+.inputMovie{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 1;
+    background-color: lightblue;
+    max-width: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.movieInput, .ratingInput{
+    display: flex;
+    gap: 0.4rem;
+}
+
+.addButton button{
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    background-color: yellow;
+    border: 2px solid rebeccapurple;
+    cursor: pointer;
+}

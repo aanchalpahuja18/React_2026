@@ -34,12 +34,18 @@ const InputForm = ({setAddClicked, setMovieName, setRating, movieName, setMovies
         setRating(Number(e.target.value))
     }
   return (
-    <div>
-      <label htmlFor="movieName">Movie Name:</label>
-      <input type="text" id='movieName' onChange={nameHandler} value={movieName}/>
-      <label htmlFor="rating">Rating:</label>
-      <input type="number" id='rating' onChange={ratingHandler} min={0} max={10} value={rating}/>
-      <button onClick={addMovieHandler}>Add</button>
+    <div className='inputMovie'>
+        <div className='movieInput'>
+            <label htmlFor="movieName">Movie Name:</label>
+            <input type="text" id='movieName' onChange={nameHandler} value={movieName}/>
+        </div>
+        <div className='ratingInput' >
+            <label htmlFor="rating">Rating:</label>
+            <input type="number" id='rating' onChange={ratingHandler} min={0} max={10} value={rating}/>
+        </div>
+        <div className='addButton'>
+            <button onClick={addMovieHandler}>Add</button>
+        </div>
     </div>
   )
 }

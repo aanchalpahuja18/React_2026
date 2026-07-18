@@ -1,0 +1,14 @@
+.searchBox{
+    margin: 1rem;
+    color: lightblue;
+    padding: 1.2rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#search{
+    max-width: fit-content;
+}

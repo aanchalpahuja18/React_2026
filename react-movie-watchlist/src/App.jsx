@@ -20,18 +20,20 @@ function App() {
     setMoviesArr(newMoviesArr)
   }
   return (
-    <div>
+    <div className="app">
       <Header/>
-      <p>Total Movies: {moviesArr.length}</p>
+      <p className='totalMovies'>Total Movies: {moviesArr.length}</p>
       {moviesArr.length > 0 && <SearchMovie moviesArr={moviesArr} setMoviesArr={setMoviesArr}/>}
-      <button onClick={addMovieHandler}>+ Add Movie</button>
+      <button onClick={addMovieHandler} className='addBtn'>+ Add Movie</button>
       {addClicked && <InputForm setAddClicked={setAddClicked} setMovieName= {setMovieName} setRating={setRating} movieName={movieName} setMoviesArr={setMoviesArr}
       moviesArr={moviesArr} rating={rating} />}
-      {moviesArr.length == 0 && <p>No movies yet 🍿</p>}
-      {moviesArr.length > 0 && 
-      moviesArr.map((movie) => {
-        return <MovieCard {...movie} key={movie.id} handleDelete={handleDelete}/>
-      })}
+      {moviesArr.length == 0 && <p className='noMovies'>No movies yet 🍿</p>}
+      <div className='container'>
+        {moviesArr.length > 0 && 
+        moviesArr.map((movie) => {
+          return <MovieCard {...movie} key={movie.id} handleDelete={handleDelete}/>
+        })}
+      </div>
     </div>
   )
 }

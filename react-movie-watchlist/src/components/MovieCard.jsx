@@ -7,12 +7,14 @@ const MovieCard = ({id, name, rating, status, handleDelete}) => {
         setIsWatching(!isWatching);
     }
   return (
-    <div>
-      <h3>{name}</h3>
-      <h5>{rating}</h5>
-      <p>Status: {isWatching ? "Watching" : "Completed"}</p>
-      <button onClick={() => handleDelete(id)}>Delete</button>
-      <button onClick={watchHandler}>{isWatching ? "Watching" : "Watch Again"}</button>
+    <div className='card'>
+      <h3 className='title'>{name}</h3>
+      <h5 className='rating'>{rating}⭐</h5>
+      <p className='status'>Status: {isWatching ? "Watching" : "Completed"}</p>
+      <div className='buttons'>
+        <button onClick={() => handleDelete(id)} className='delete'>Delete</button>
+        <button onClick={watchHandler} className='watch'>{isWatching ? "Watching" : "Watch Again"}</button>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,38 @@
+/* .app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.totalMovies{
+  margin: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.noMovies{
+  margin: 1rem 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 3px dotted #fff;
+  max-width: fit-content;
+  padding: 0.5rem;
+}
+
+.addBtn{
+    background-color: yellow;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}

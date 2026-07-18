@@ -4,13 +4,15 @@ import "./SearchMovie.css"
 const SearchMovie = ({moviesArr, setMoviesArr}) => {
 
     function handleSearchChange(e)  {
-        const filteredMovies = moviesArr.filter((movie) => {
-            return movie.name.toLowerCase().includes(e.target.value.toLowerCase())
-        })
+        const filteredMovies = moviesArr.filter((movie) => { return movie.name.toLowerCase().includes(e.target.value) }) 
         setMoviesArr(filteredMovies)
+        if(e.target.value == "")
+        { 
+        setMoviesArr(moviesArr) 
+        } 
     }
   return (
-    <div>
+    <div className='searchBox'>
       <label htmlFor="search">Search Movie</label>
       <input type="text" id='search' onChange={handleSearchChange} />
     </div>
