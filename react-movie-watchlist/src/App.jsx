@@ -23,7 +23,7 @@ function App() {
     <div className="app">
       <Header/>
       <p className='totalMovies'>Total Movies: {moviesArr.length}</p>
-      {moviesArr.length > 0 && <SearchMovie moviesArr={moviesArr} setMoviesArr={setMoviesArr}/>}
+      {/* {moviesArr.length > 0 && <SearchMovie moviesArr={moviesArr} setMoviesArr={setMoviesArr}/>} */}
       <button onClick={addMovieHandler} className='addBtn'>+ Add Movie</button>
       {addClicked && <InputForm setAddClicked={setAddClicked} setMovieName= {setMovieName} setRating={setRating} movieName={movieName} setMoviesArr={setMoviesArr}
       moviesArr={moviesArr} rating={rating} />}
