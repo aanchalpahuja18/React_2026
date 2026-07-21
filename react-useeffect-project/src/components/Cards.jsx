@@ -24,6 +24,7 @@ const Cards = ({courses, category}) => {
   return (
     <div className='cards-box'>
       {
+        courses.length == 0 ? <div className='notAvail'>No courses available</div> :
         getCourses().map((course, index) => {
           return <Card key={index} course = {course} likedCourses={likedCourses} setLikedCourses={setLikedCourses}/>
         })

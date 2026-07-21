@@ -14,6 +14,7 @@ function App() {
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState(filteredData[0].title);
+  const [dataFound, setDataFound] = useState(false);
 
   async function fetchData() {
     setLoading(true);
@@ -21,9 +22,11 @@ function App() {
         const response = await fetch(apiUrl);
         const output = await response.json();
         setCourses(output.data);
+        setDataFound(true);
         console.log(output.data);
         
       } catch (error) {
+        setDataFound(false);
         toast.error("Something went wrong")
       }
       setLoading(false);
@@ -43,7 +46,9 @@ function App() {
         <Filter category={category} setCategory={setCategory}/>
       </div>
       <div className='cards-container'>
-        {loading ? <Spinner/> : <Cards courses={courses} category={category}/>}
+        {loading ? <Spinner/> : (
+          dataFound ? <Cards courses={courses} category={category}/> : <div className='dataNotFound'>404 Data Not Found</div>
+        )}
       </div>
     </div>
   )
