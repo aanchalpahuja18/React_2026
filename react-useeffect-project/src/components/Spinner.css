@@ -12,3 +12,17 @@
 @keyframes s3{ 
   100%{transform: rotate(1turn)}
 }
+
+.spinner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.spinner-text{
+  color: #000;
+  font-weight: 550;
+  font-size: 1.2rem;
+}

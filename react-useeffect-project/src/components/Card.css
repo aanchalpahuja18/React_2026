@@ -1,0 +1,61 @@
+.card{
+    background-color: rgba(11, 11, 48, 0.842);
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.imgBox{
+    position: relative;
+    width: 100%;
+}
+
+.image{
+    height: 170px;
+    width: 100%;
+}
+
+.likeBtn{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 7px;
+    bottom: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    border: none;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icon{
+    font-size: 1.75rem;
+}
+
+.text{
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.title{
+    color: white;
+    font-weight: 550;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.desc{
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}

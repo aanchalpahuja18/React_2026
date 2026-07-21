@@ -1,21 +1,49 @@
-import React from 'react'
-import {FcLike} from "react-icons/fc"
+import React, { useState } from 'react'
+import {FcLike, FcLikePlaceholder} from "react-icons/fc"
+import "./Card.css"
+import { toast } from 'react-toastify';
 
+const Card = ({course, likedCourses, setLikedCourses}) => {
 
-const Card = ({course}) => {
+  function clickHandler(){
+    if(likedCourses.includes(course.id)){
+      //pehle se course is liked
+      setLikedCourses((prev) => prev.filter((id) => (id !== course.id)) );
+      toast.warning("Like Removed!")
+    }
+    else{
+      //if pehle se course is not liked
+      //then we have to insert this course into the likedCourses array
+      if(likedCourses.length == 0){
+        setLikedCourses([course.id]);
+      }
+      else{
+        setLikedCourses((prev) => [...prev, course.id])
+      }
+      toast.success("Liked successfully!")
+    }
+  }
   return (
-    <div>
-      <div>
-        <img src={course.image.url} alt={course.image.alt} />
-        <div>
-            <button>
-                <FcLike/>
+    <div className='card'>
+      <div className='imgBox'>
+        <img src={course.image.url} alt={course.image.alt} className='image'/>
+        <div className='likeBtn'>
+            <button className='btn' onClick={clickHandler}>
+                {
+                  likedCourses.includes(course.id) ? <FcLike className='icon' /> : <FcLikePlaceholder className='icon'/>
+                }
             </button>
         </div>
-       </div>
-       <div>
-            <p>{course.title}</p>
-            <p>{course.description}</p>
+      </div>
+       <div className='text'>
+            <p className='title'>{course.title}</p>
+            <p className='desc'>
+              {
+                course.description.length > 100 ?
+                course.description.substring(0,100) + "..." :
+                course.description
+              }
+            </p>
        </div>
     </div>
   )

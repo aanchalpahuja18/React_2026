@@ -1,0 +1,7 @@
+.cards-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}

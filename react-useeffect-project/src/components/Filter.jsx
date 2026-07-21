@@ -2,12 +2,17 @@ import React from 'react'
 import {filteredData} from "../data"
 import "./Filter.css"
 
-const Filter = () => {
+const Filter = ({category, setCategory}) => {
+
+  function filterCategoryHandler(e){
+    setCategory(e.target.innerText)
+  }
   return (
     <div className='filter'>
       {
         filteredData.map((data) => {
-            return <button className='filterBtn' key={data.id}>{data.title}</button>
+            return <button onClick={filterCategoryHandler} className={`filterBtn ${category === data.title ? "active" : ""}`} key={data.id}
+            >{data.title}</button>
         })
       }
     </div>

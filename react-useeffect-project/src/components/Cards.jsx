@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './Card';
+import "./Cards.css"
 
-const Cards = ({courses}) => {
+const Cards = ({courses, category}) => {
 
-  let allCourses = [];
+  const [likedCourses, setLikedCourses] = useState([]);
+
   function getCourses() {
+    if(category == "All"){
+      let allCourses = [];
     Object.values(courses).forEach((courseCategory) => {
       courseCategory.forEach((course) => {
         allCourses.push(course);
@@ -12,12 +16,16 @@ const Cards = ({courses}) => {
       })
     })
     return allCourses;
+    }
+    else{
+      return courses[category];
+    }
   }
   return (
-    <div>
+    <div className='cards-box'>
       {
         getCourses().map((course, index) => {
-          return <Card key={index} course = {course}/>
+          return <Card key={index} course = {course} likedCourses={likedCourses} setLikedCourses={setLikedCourses}/>
         })
       }
     </div>

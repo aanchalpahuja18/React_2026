@@ -6,13 +6,14 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Filter from "./components/Filter"
 import Cards from "./components/Cards"
-import { apiUrl } from './data'
+import { apiUrl, filteredData } from './data'
 import Spinner from './components/Spinner'
 import {toast} from "react-toastify";
 
 function App() {
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
+  const [category, setCategory] = useState(filteredData[0].title);
 
   async function fetchData() {
     setLoading(true);
@@ -39,10 +40,10 @@ function App() {
         <Navbar/>
       </div>
       <div>
-        <Filter/>
+        <Filter category={category} setCategory={setCategory}/>
       </div>
-      <div>
-        {loading ? <Spinner/> : <Cards courses={courses}/>}
+      <div className='cards-container'>
+        {loading ? <Spinner/> : <Cards courses={courses} category={category}/>}
       </div>
     </div>
   )
