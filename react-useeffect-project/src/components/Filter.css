@@ -1,0 +1,25 @@
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 2rem;
+    padding-left: 2rem;
+    gap: 1rem;
+    margin: auto 0;
+}
+
+.filterBtn{
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.filterBtn:hover{
+    background-color: rgba(0, 0, 0, 0.511);
+}

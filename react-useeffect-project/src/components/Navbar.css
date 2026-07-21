@@ -1,0 +1,11 @@
+.navbar{
+    background-color: rgb(3, 3, 62);
+    padding: 1.5rem 0rem; 
+}
+
+.nav-heading{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}

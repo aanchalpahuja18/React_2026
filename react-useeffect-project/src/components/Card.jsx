@@ -1,5 +1,7 @@
 import React from 'react'
 import {FcLike} from "react-icons/fc"
+
+
 const Card = ({course}) => {
   return (
     <div>
