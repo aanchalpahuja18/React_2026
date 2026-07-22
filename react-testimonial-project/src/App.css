@@ -1,0 +1,26 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.container{
+ text-align: center;   
+}
+
+.test-heading{
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.line{
+    background-color: rebeccapurple;
+    height: 5px;
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+}

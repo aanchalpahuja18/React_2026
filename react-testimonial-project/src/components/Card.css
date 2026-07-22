@@ -1,0 +1,71 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    position: relative;
+    margin: 0 auto;
+}
+
+.image{
+    height: 140px;
+    width: 140px;
+    z-index: 25;
+    border-radius: 50%;
+}
+
+.imgBox{
+    position: absolute;
+    top: -6rem;
+    left: -1rem;
+    z-index: 10;
+    margin: 2rem;
+}
+
+.circle{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: none;
+    background-color: rebeccapurple;
+    opacity: 0.7;
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    z-index: -1;
+}
+
+.name{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.job{
+    text-align: center;
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    color: rgba(60, 20, 100, 0.518);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.icon{
+    color: rebeccapurple;
+    margin-top: 2rem;
+}
+
+.right{
+    margin-top: 1rem;
+}
+
+.text{
+    text-align: center;
+    color: slategrey;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    width: 100%;
+}

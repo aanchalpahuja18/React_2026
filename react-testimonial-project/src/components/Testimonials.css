@@ -1,0 +1,63 @@
+.test-container{
+    margin-top: 1rem;
+    width: 55vw;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s;
+    padding: 16px;
+    border-radius: 0.375rem;
+}
+
+.test-container:hover{
+    box-shadow: 2px 2px 5px gray;
+}
+
+
+.btns{
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow{
+    background-color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.actual{
+    color: rebeccapurple;
+    opacity: 0.4;
+    transition: all 0.2s;
+}
+
+.actual:hover{
+    color: rebeccapurple;
+    opacity: 1;
+}
+
+.surprise{
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1rem;
+    color: #fff;
+    background-color: rebeccapurple;
+    opacity: 0.8;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.surprise:hover{
+    background-color: rebeccapurple;
+    opacity: 1;
+}
