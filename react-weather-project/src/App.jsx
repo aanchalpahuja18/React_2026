@@ -39,10 +39,14 @@ function App() {
   useEffect(() => {
     if(!place) return;
     fetchWeather(place);
+    localStorage.setItem("lastPlace", place);
   }, [place])
 
   useEffect(() => {
-    setPlace("Nagpur")
+    let lastPlace = localStorage.getItem("lastPlace");
+    if(lastPlace){  
+      setPlace(lastPlace);
+    }
 
   }, [])
 
