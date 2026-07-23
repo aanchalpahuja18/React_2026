@@ -9,27 +9,26 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isDataFound, setIsDataFound] = useState(false);
 
-  let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=46b67ba5807746488f7140424262207&q=';
+  let apiUrl = 'https://api.weatherapi.com/v1/current.json?key=46b67ba5807746488f7140424262207&q=';
 
 
   function handleInputChange(e){
     setInput(e.target.value)
   }
 
-  async function fetchWeather(){
+  async function fetchWeather(place){
     setIsLoading(true);
     try{
       let response = await fetch(apiUrl+place);
       console.log(response);
-      if(response.status === 200){
+      if(response.ok){
+        let data = await response.json();
+        setWeatherData(data);
         setIsDataFound(true);
       }
       else {
         setIsDataFound(false);
       }
-      
-      let data = await response.json();
-      setWeatherData(data);
     }
     catch(error){
       console.log("Error msg: " + error);
@@ -39,17 +38,17 @@ function App() {
 
   useEffect(() => {
     if(!place) return;
-    fetchWeather();
+    fetchWeather(place);
   }, [place])
 
   useEffect(() => {
-    localStorage.setItem("place", "Nagpur");
-    let data = localStorage.getItem("place");
-    setPlace(data);
+    setPlace("Nagpur")
+
   }, [])
 
   function weatherDataHandler()
   {
+    if(input.trim() === "") return;
     setPlace(input);
     setInput("");
   }
@@ -74,8 +73,8 @@ function App() {
         </form>
       </div>
       {
-        isLoading ? (<div className='loader'>Loading....</div>) : (
-          isDataFound ? (<WeatherCard response={weatherData} />) : (place ? <div className='city'>City Not Found!</div> : <div className='city'>Please enter a place to fetch the weather details</div>)
+        isLoading ? (<div className='loader'>⏳ Fetching weather....</div>) : (
+          isDataFound ? (<WeatherCard response={weatherData} />) : (place ? <div className='city'>❌ Couldn't find this city.</div> : <div className='city'>🌎 Search any city to begin.</div>)
         )
       }
     </div>
