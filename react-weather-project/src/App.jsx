@@ -6,7 +6,7 @@ function App() {
   const [input, setInput] = useState('');
   const [place, setPlace] = useState('');
   const [weatherData, setWeatherData] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isDataFound, setIsDataFound] = useState(false);
 
   let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=46b67ba5807746488f7140424262207&q=';
@@ -20,12 +20,18 @@ function App() {
     setIsLoading(true);
     try{
       let response = await fetch(apiUrl+place);
+      console.log(response);
+      if(response.status === 200){
+        setIsDataFound(true);
+      }
+      else {
+        setIsDataFound(false);
+      }
+      
       let data = await response.json();
       setWeatherData(data);
-      setIsDataFound(true);
     }
     catch(error){
-      setIsDataFound(false);
       console.log("Error msg: " + error);
     }
     setIsLoading(false);
@@ -36,9 +42,16 @@ function App() {
     fetchWeather();
   }, [place])
 
+  useEffect(() => {
+    localStorage.setItem("place", "Nagpur");
+    let data = localStorage.getItem("place");
+    setPlace(data);
+  }, [])
+
   function weatherDataHandler()
   {
     setPlace(input);
+    setInput("");
   }
 
   function handleSubmit(e){
@@ -53,7 +66,7 @@ function App() {
       <div>
         <form onSubmit={handleSubmit} className='formBox'>
           <div>
-            <input type="text" id='weatherInput' onChange={handleInputChange} placeholder='Enter the place'/>
+            <input type="text" id='weatherInput' value={input} onChange={handleInputChange} placeholder='Enter the place'/>
           </div>
           <div>
             <button onClick={weatherDataHandler} className='btn'>Get Weather</button>
@@ -62,7 +75,7 @@ function App() {
       </div>
       {
         isLoading ? (<div className='loader'>Loading....</div>) : (
-          isDataFound ? (<WeatherCard response={weatherData} />) : (<div>City Not Found!</div>)
+          isDataFound ? (<WeatherCard response={weatherData} />) : (place ? <div className='city'>City Not Found!</div> : <div className='city'>Please enter a place to fetch the weather details</div>)
         )
       }
     </div>
