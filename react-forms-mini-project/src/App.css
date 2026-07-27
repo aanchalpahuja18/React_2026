@@ -1,0 +1,77 @@
+.container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+input, select{
+    width: 740px;
+    padding: 0.6rem;
+    margin: 1rem 0rem;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+/* input, select:focus{
+    border: 1px solid lightblue;
+} */
+
+input:focus, select:focus{
+    border: 2px solid #3498db;
+    outline: none;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: start;
+    width: 5%;
+    gap: 0.7rem;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.check-para{
+    margin-top: 0rem;
+    margin-left: 1.7rem;
+    font-size: 0.95rem;
+    color: gray;
+}
+
+.email-para{
+    font-size: 0.85rem;
+}
+.push{
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.desc{
+   font-size: 0.95rem;
+    color: gray; 
+}
+
+.radio{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 5%;
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    padding: 0.4rem 0.6rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
