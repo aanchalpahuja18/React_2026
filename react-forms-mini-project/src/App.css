@@ -10,7 +10,7 @@
 }
 
 input, select{
-    width: 740px;
+    width: 100%;
     padding: 0.6rem;
     margin: 1rem 0rem;
     background-color: #fff;
