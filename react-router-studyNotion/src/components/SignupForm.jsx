@@ -9,6 +9,7 @@ const SignupForm = ({setIsLoggedIn}) => {
     const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -64,8 +65,8 @@ const SignupForm = ({setIsLoggedIn}) => {
             <span onClick={() => setShowPassword((prevPassword) => !prevPassword)}>{showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}</span>
 
             <label htmlFor="confirmPassword">Confirm Password <sup>*</sup></label>
-            <input required type={showPassword ? "text" : "password"} id='confirmPassword' name='confirmPassword' value={formData.confirmPassword} onChange={changeHandler} placeholder='Confirm Password'/>
-            <span onClick={() => setShowPassword((prevPassword) => !prevPassword)}>{showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}</span>
+            <input required type={showConfirmPassword ? "text" : "password"} id='confirmPassword' name='confirmPassword' value={formData.confirmPassword} onChange={changeHandler} placeholder='Confirm Password'/>
+            <span onClick={() => setShowConfirmPassword((prevPassword) => !prevPassword)}>{showConfirmPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}</span>
         </div>
 
         <button>Create Account</button>       
