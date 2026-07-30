@@ -32,21 +32,23 @@ const LoginForm = ({setIsLoggedIn}) => {
         navigate("/dashboard")
     }
   return (
-    <div>
+    <div className='flex flex-col w-full gap-y-4 mt-6'>
       <form onSubmit={submitHandler}>
-        <label htmlFor="email">Email Address <sup>*</sup></label>
-        <input type="email" required id='email' name='email' value={formData.email} onChange={changeHandler} placeholder='Enter email address'/>
+        <label className='w-full'  htmlFor="email"><span className='text-gray-100 text-[0.875rem] mb-1 leading-[1.375rem]'>Email Address</span> <sup className='text-pink-200'>*</sup></label> <br />
+        <input type="email" required id='email' name='email' value={formData.email} onChange={changeHandler} placeholder='Enter email address' className='bg-gray-800 rounded-[0.5rem] w-full text-gray-300 p-[12px] mt-2 mb-4'/>
 
-        <label htmlFor="password">Password <sup>*</sup></label>
-        <input type={showPassword ? "text" : "password"} required id='password' name='password' value={formData.password} onChange={changeHandler} placeholder='Enter password'/>
+        <label className='w-full' htmlFor="password"><span className='text-gray-100 text-[0.875rem] mb-1 leading-[1.375rem]'>Password</span> <sup className='text-pink-200'>*</sup></label>
+        <div className='relative'>
+          <input type={showPassword ? "text" : "password"} required id='password' name='password' value={formData.password} onChange={changeHandler} placeholder='Enter password' className='bg-gray-800 rounded-[0.5rem] w-full text-gray-300 p-[12px] mt-2'/>
 
-        <span onClick={() => setShowPassword((prevPassword) => !prevPassword)}>{showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}</span>
+        <span onClick={() => setShowPassword((prevPassword) => !prevPassword)} className='absolute right-4 top-[23px] cursor-pointer text-2xl text-white'>{showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}</span>
+        </div>
 
         <Link to="#">
-            <span>Forgot password</span>
+            <p className='text-xs mt-1 text-blue-100 max-w-max ml-auto'>Forgot password</p>
         </Link>
 
-        <button>Sign In</button>
+        <button className='bg-yellow-400 w-full rounded-[8px] font-medium text-gray-950 px-[12px] py-[8px] cursor-pointer mt-6'>Sign In</button>
       </form>
     </div>
   )

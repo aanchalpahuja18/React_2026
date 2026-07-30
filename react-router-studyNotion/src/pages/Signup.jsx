@@ -11,7 +11,6 @@ const Signup = ({setIsLoggedIn}) => {
     image = {signupImg}
     formType="signup"
     setIsLoggedIn={setIsLoggedIn}
-
     />
   )
 }

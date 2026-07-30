@@ -5,38 +5,38 @@ import { toast } from 'react-toastify'
 
 const Navbar = ({isLoggedIn, setIsLoggedIn}) => {
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between items-center w-11/12 max-w-290 py-4 mx-auto'>
       <Link to="/">
         <img src={logo} alt="Logo" width={160} height={32} loading='lazy'/>
       </Link>
 
       <nav>
-        <ul className='flex gap-3'>
+        <ul className='text-gray-200 flex gap-x-6'>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/">About</Link></li>
             <li><Link to="/">Contact</Link></li>
         </ul>
       </nav>
 
-      <div className='flex ml-5 mr-3 gap-3'>
+      <div className='flex items-center gap-x-4'>
         {
          isLoggedIn == false && <Link to="/login">
-            <button>Login</button>
+            <button className='bg-gray-800 text-gray-200 py-2 px-3 rounded-lg border border-gray-700'>Log in</button>
         </Link>}
         {
           isLoggedIn == true && <Link to="/">
             <button onClick={() => {
                 setIsLoggedIn(false)
                 toast.success("Logged out successfully!")
-            }}>Logout</button>
+            }} className='bg-gray-800 text-gray-200 py-2 px-3 rounded-lg border border-gray-700'>Log out</button>
         </Link>}
         {
           isLoggedIn == false && <Link to="/signup">
-            <button>Signup</button>
+            <button className='bg-gray-800 text-gray-200 py-2 px-3 rounded-lg border border-gray-700'>Sign up</button>
         </Link>}
         {
           isLoggedIn == true && <Link to="/dashboard">
-            <button>Dashboard</button>
+            <button className='bg-gray-800 text-gray-200 py-2 px-3 rounded-lg border border-gray-700'>Dashboard</button>
         </Link>}
       </div>
     </div>
