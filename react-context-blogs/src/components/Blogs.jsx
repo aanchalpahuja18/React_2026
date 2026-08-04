@@ -18,7 +18,7 @@ const Blogs = () => {
         posts.length === 0 ? <div>No Posts found!</div> : (
             posts.map((post) => {
                 return <div key={post.id}>
-                    <p>{post.title}</p>
+                    <p className='text-xl font-bold'>{post.title}</p>
                     <p>By <span>{post.author}</span> on <span>{post.category}</span></p>
                     <p>Posted on <span>{post.date}</span></p>
                     <p>{post.content}</p>
