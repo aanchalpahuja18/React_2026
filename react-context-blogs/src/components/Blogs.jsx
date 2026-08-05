@@ -13,18 +13,18 @@ const Blogs = () => {
     }, [])
     
   return (
-    <div>
+    <div className='w-11/12 max-w-[670px] py-8 flex flex-col gap-y-7 mt-[66px] mb-[70px]'>
       {loading ? <Spinner/> : (
         posts.length === 0 ? <div>No Posts found!</div> : (
             posts.map((post) => {
                 return <div key={post.id}>
-                    <p className='text-xl font-bold'>{post.title}</p>
-                    <p>By <span>{post.author}</span> on <span>{post.category}</span></p>
-                    <p>Posted on <span>{post.date}</span></p>
-                    <p>{post.content}</p>
-                    <div>
+                    <p className='font-bold text-lg'>{post.title}</p>
+                    <p className='text-sm mt-[4px]'>By <span className='italic'>{post.author}</span> on <span className='underline font-bold'>{post.category}</span></p>
+                    <p className='text-sm mt-[6px]'>Posted On <span>{post.date}</span></p>
+                    <p className='text-md mt-[14px]'>{post.content}</p>
+                    <div className='flex gap-x-3'>
                         {post.tags.map((tag, index) => {
-                            return <span key={index}>#{tag}</span>
+                            return <span key={index} className='text-blue-600 underline text-xs font-bold mt-[5px] cursor-pointer'>#{tag}</span>
                         })}
                     </div>
                 </div>
