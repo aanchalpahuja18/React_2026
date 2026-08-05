@@ -13,7 +13,7 @@ const Blogs = () => {
     }, [])
     
   return (
-    <div className='w-11/12 max-w-[670px] py-8 flex flex-col gap-y-7 mt-[66px] mb-[70px]'>
+    <div className='w-11/12 max-w-[670px] py-8 flex flex-col gap-y-7 mt-[66px] mb-[70px] justify-center items-center h-screen'>
       {loading ? <Spinner/> : (
         posts.length === 0 ? <div>No Posts found!</div> : (
             posts.map((post) => {
