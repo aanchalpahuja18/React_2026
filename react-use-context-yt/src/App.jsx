@@ -11,14 +11,33 @@ const UserContext = createContext();
 
 //step 4: consume the value
 
+
+//Project 2:
+
+const ThemeContext = createContext();
+
 function App(){
 
     const [user, setUser] = useState({name: "Aanchal"});
 
+    const [theme, setTheme] = useState("light");
+
   return (
+    // <div>
+    //     <UserContext.Provider value={user}>
+    //         <ChildA/>
+    //     </UserContext.Provider>
+    // </div>
+    
+
+    //Project 2:
     <div>
         <UserContext.Provider value={user}>
-            <ChildA/>
+            <ThemeContext.Provider value={{theme, setTheme}}>
+                <div id='container' style={{backgroundColor: theme === "light" ? "beige" : "black"}}>
+                    <ChildA />
+                </div>
+            </ThemeContext.Provider>
         </UserContext.Provider>
     </div>
   )
@@ -26,3 +45,4 @@ function App(){
 
 export default App
 export {UserContext}
+export {ThemeContext}
